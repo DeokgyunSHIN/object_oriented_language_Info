@@ -24,3 +24,5 @@
     } 
  }
 ```
+
+그러고 난뒤 메소드 호출을 할떄는 setCardNumber(long 형 데이터) 또는 getCardNumber()를 사용하면 된다. 
