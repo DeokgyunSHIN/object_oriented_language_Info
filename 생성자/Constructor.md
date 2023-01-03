@@ -88,3 +88,72 @@ public class Student {
  > 내가 생성자를 하나라도 추가 한다면 자바에서는 "너가 생성자를 만들었네?? 그러면 이왕 만드는 김에 기본 생성자도 너가 만들어" 라고 하면서 
  > 
  > 자바에서는 기본생성자를 알아서 추가해주지 않는다.
+
+
+필요한 여러 생상자 구현 
+
+> 생성자 오버로딩 
+> 
+> > 하나의 크래스에서 인자가 다르면 생성자를 여러 개 구현 가능하다.
+
+ 예시 
+ Student.java 
+ 
+ ``` java 
+ public class Student {
+    String name; // 이름
+    int age; // 나이
+    String gender; //성별
+    String department;  //학과
+ public Student(){
+
+ }
+ public Student(String name){
+     this.name=name;
+ }
+ public Student(String name, int age){
+     this.name=name;
+     this.age=age;
+ }
+ public Student(String name,int age, String gender){
+     this.name=name;
+     this.age=age;
+     this.gender=gender;
+ }
+ public Student(String name, int age,String gender, String department){
+     this.name=name;
+     this.age=age;
+     this.gender=gender;
+     this.department=department;
+  }
+ }
+```
+
+StudentTest.java
+```java 
+ public class StudentTest {
+
+    public static void main(String[] args) {
+
+      Student st1=new Student();  //기본 생성자
+      Student st2=new Student("신덕균");
+      Student st3=new Student("신덕균 ",25);
+      Student st4=new Student("신덕균",25, "남자");
+      Student st5=new Student("신덕균 ",25,"남자","정보통신공학과");
+
+
+        System.out.println(st1.name+" "+st1.age+" "+st1.gender+" "+st1.department);
+        System.out.println(st2.name+" "+st2.age+" "+st2.gender+" "+st2.department);
+        System.out.println(st3.name+" "+st3.age+" "+st3.gender+" "+st3.department);
+        System.out.println(st4.name+" "+st4.age+" "+st4.gender+" "+st4.department);
+        System.out.println(st5.name+" "+st5.age+" "+st5.gender+" "+st5.department);
+     }
+ }
+``` 
+
+이러한 코드 형태를 생성자 오버로딩이다. 
+
+오버로딩은 동일한 메스드에서 마라피터가 다른것을 오버로딩이라고 한다. 
+
+
+
