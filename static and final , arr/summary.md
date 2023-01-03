@@ -12,8 +12,8 @@ Circle.java
 ``` java 
   
 public class Circle {
-    double radius;  //반 지름
-    static double PI=3.14;  // 파이
+    double radius;  //반 지름 ( 비정적 필드 -> 할당되는 객체마다 저장공간이 할당된다.)
+    static double PI=3.14;  // 파이 ( 정적 필드 - > 클래스에 소속되 저장공간이 하나만 조재하는 변수이다.)
 
     public Circle(double radius){
         this.radius=radius;
