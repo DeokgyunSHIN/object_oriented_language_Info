@@ -7,3 +7,20 @@
 > Getter 와 Setter 는 무조건 쓰는것이 아닌 필드 접근 제한자가 :private 일때만 쓰인다. 
 > 
 > 이유는 private 은 외부에서 접근을 못하기 떄문에 접근을 하기 위해서는 getter와 setter의 메소드를 사용해서 데이터를 입력과 출력을 할수 있다.
+
+예시 
+``` java 
+  public class Card {
+    private  long cardNumber; // 카드번호(16자리 숫자)
+  
+    // setter
+    public void setCardNumber(long cardNumber){
+        this.cardNumber= cardNumber;
+    }
+    
+    // getter 
+    public long getCardNumber(){
+        return cardNumber;
+    } 
+ }
+```
