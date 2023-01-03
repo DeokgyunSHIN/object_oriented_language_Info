@@ -69,3 +69,68 @@ static 을 붙여주게 되면 클래스 내에 공간만 갖게 된다.
  PI가 필요할때마다 클래스에 내에 있는 PI를 빌려(공유)쓴다는 것이다.
  
  그리고 static 같은 경우는 대문자로 쓴다.
+<br>
+<br>
+<br>
+ 
+ ### 상수
+
+> 키워드는 final 로 명시하며 저장된 값을 더 이상 수정할 수 없도록 한다. 
+> 
+> 보통 static도 함께 사용하여 정적으로 하는 것을 선호 한다.
+
+예시) 
+
+Calendar.java 
+```java 
+public class Calendar {
+    static final int LAST_MONTH=12;
+ }
+```
+
+CalendarTest.java 
+``` java
+  public class CalendarTest {
+    public static void main(String[] args) {
+        System.out.println(Calendar.LAST_MONTH);
+    }
+ }
+```
+
+마지막 달월을 12월이다. 즉, 12월 이상은 없기 때문에 final로 12를 상수로 만들어서 바뀌지 않도록 한다는것이다.
+
+여기서 객체를 만들지 않고 사용할수 있는 이유는 static 를 붙였기 때문에 클래스에서 바로 사용이 가능하다.
+
+만약에 static이 없다고 하면 객체를 만들어줘서 사용을 해야한다 .
+
+물론 static이 필수로 붙는건 아니다. 
+
+만약에 객체만 만들어질때 딱 한번만 값이 설정되고  그 이후에는 값이 바뀌지 않을 때는 final만 쓴다.
+
+예시)
+
+Calendar.java 
+```java 
+public class Calendar {
+     final int LAST_MONTH;
+     
+     public Calendar(int month){
+         LAST_MONTH=month;
+     }
+}
+```
+
+CalendarTest.java 
+``` java
+public class CalendarTest {
+    public static void main(String[] args) {
+        Calendar c1=new Calendar(12);
+        System.out.println(c1.LAST_MONTH);
+        //c1.LAST_MONTH=11;  에러
+    }
+}
+```
+
+즉, fianl 은 한번 초기화(할당)는 가능하지만  한번 할당을 하게 되면 값을 바꾸지 못한다. 
+
+이럴 떄는 fianl 만 써야하고 공통적으로 써야할 때에는 static fianl를 쓴다.
