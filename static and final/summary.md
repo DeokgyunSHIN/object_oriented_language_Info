@@ -1,4 +1,4 @@
-# static과 final/ 배열 
+# static과 final
 
  ### static 
   
@@ -134,3 +134,6 @@ public class CalendarTest {
 즉, fianl 은 한번 초기화(할당)는 가능하지만  한번 할당을 하게 되면 값을 바꾸지 못한다. 
 
 이럴 떄는 fianl 만 써야하고 공통적으로 써야할 때에는 static fianl를 쓴다.
+
+
+  
