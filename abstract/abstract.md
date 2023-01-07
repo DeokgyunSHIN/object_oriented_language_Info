@@ -48,13 +48,18 @@ Rectangle.java
 
 ```java
  public class Rectangle extends Shapes{
-
-    public Rectangle(int x,int y){
+     
+     int length;
+     int height;
+    public Rectangle(int x,int y, int length, int height){
         super(x,y);
+        this.length=length;
+        this.height=height;
     }
     @Override
     public void draw() {
         System.out.println("사각형의 x값: "+x+", y값: "+y);
+        System.out.println("길이: "+length+", 높이: "+height);
     }
  }
 ```
@@ -63,13 +68,18 @@ Circle.java
 
 ```java
  public class Circle extends Shapes{
-
-    public Circle(int x,int y){
+  
+     int length;
+     int height;
+    public Circle(int x,int y, int length, int height){
         super(x,y);
+         this.length=length;
+        this.height=height;
     }
     @Override
     public void draw() {
         System.out.println("원의 x값: "+x+", y값: "+y);
+        System.out.println("길이: "+length+", 높이: "+height);
     }
  }
 ```
@@ -78,13 +88,18 @@ Triangle.java
 
 ```java 
   public class Triangle extends Shapes{
-
-    public Triangle(int x,int y){
+    
+     int length;
+     int height;
+    public Triangle(int x,int y, int length, int height){
         super(x,y);
+         this.length=length;
+        this.height=height;
     }
     @Override
     public void draw() {
         System.out.println("삼각형의 x값: "+x+", y값: "+y);
+        System.out.println("길이: "+length+", 높이: "+height);
     }
  }
 ```
@@ -95,11 +110,11 @@ ShapesTest.java
   public class ShapesTest {
 
     public static void main(String[] args) {
-        Rectangle rectangle=new Rectangle(10,20);
+        Rectangle rectangle=new Rectangle(10,20,30,30);
         rectangle.draw();
-         Circle circle=new Circle(20,30);
+         Circle circle=new Circle(20,30,40,40);
         circle.draw();
-         Triangle triangle=new Triangle(40,50);
+         Triangle triangle=new Triangle(40,50,50,30);
         triangle.draw();
     }
  }
@@ -108,8 +123,11 @@ ShapesTest.java
 결과 
 ```
 사각형의 x값: 10, y값: 20
+길이: 30, 높이: 30
 원의 x값: 20, y값: 30
+길이: 40, 높이: 40
 삼각형의 x값: 40, y값: 50
+길이: 50, 높이: 30
 ```
 
 
