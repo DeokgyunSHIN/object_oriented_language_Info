@@ -69,17 +69,15 @@ Circle.java
 ```java
  public class Circle extends Shapes{
   
-     int length;
-     int height;
-    public Circle(int x,int y, int length, int height){
+     int radius;
+    public Circle(int x,int y, int raidus){
         super(x,y);
-         this.length=length;
-        this.height=height;
+         this.raidus=raidus;
     }
     @Override
     public void draw() {
         System.out.println("원의 x값: "+x+", y값: "+y);
-        System.out.println("길이: "+length+", 높이: "+height);
+        System.out.println("반지름: "+raidus;
     }
  }
 ```
@@ -125,7 +123,7 @@ ShapesTest.java
 사각형의 x값: 10, y값: 20
 길이: 30, 높이: 30
 원의 x값: 20, y값: 30
-길이: 40, 높이: 40
+반지름: 300
 삼각형의 x값: 40, y값: 50
 길이: 50, 높이: 30
 ```
