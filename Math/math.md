@@ -101,3 +101,36 @@ Math.pow(a , b) ; 라고 한다면 a의 b승이라는 뜻이다. (a^b)
 12.426에서 100을 곱해주면 1242.6 이 되며 여기서  반올림, 올림, 버림을 
 
 한 뒤에 다시 10^2 만큼 나눠주면 소수 둘째자리까지 표현이 가능하다느것을 알수 있다.
+
+
+### 수학문제 
+
+평면좌표상에서 두점 사이의 거리 공식 
+
+$$\overline{AB} = \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2} $$  
+
+두 점 사이의 거리값을 구하는 메소드를 구현하시오.
+
+ DistanceValue.java
+ 
+```java 
+  public class DistanceValue {
+   public static double distance(double x1,double x2,double y1,double y2) {
+	  return  Math.sqrt(Math.pow(x2-x1 ,2) +Math.pow(y2-y1,2));
+   }
+ }
+```
+
+MathTest3.java
+
+```java 
+  public class MathTest3 {
+	public static void main(String[] args) {
+	double x1=1;
+	double x2=2;
+	double y1=1;
+	double y2=2;
+	System.out.println( DistanceValue.distance(x1, x2, y1, y2));
+	}
+  }
+```
