@@ -99,3 +99,80 @@ main 메소드에서 객체를 생성할때 <String>이라고 생성이 되면 �
 Box 클래스에 <T>의 제네릭이 전부다 Integer로 변경되는것이다.
   
 그러면 강제 형변환도 해줄 필요도 없이 사용할 수 있다. 
+
+<br>
+<br>
+<br>
+   
+   
+### 타입 변수 표기법 
+   
+> 제네릭 클래스는 여러개의 타입 매개 변수를 가질 수 있으나 타입의 이름은 클래스나 인터페이스 내에서 유일해야 한다.
+>
+> 변수의 이름과 구분하기 위해서 한개의 대문자를 사용하며 타입 매개 변수는 기초 자료형으로 객체화될 수 없다.
+> 
+> > 예) E- Element / K-Key  / N - Number / T - Type / V - Value 등등
+  
+ 
+   
+### 타입이 서로 다른 두 데이터 제네릭 
+   
+   Box2.java
+   
+```java 
+   public class Box2<K ,V> {
+
+    private K name;
+    private V age;
+
+    public void setData (K name, V age){
+        this.name=name;
+        this.age=age;
+    }
+    public K getName(){
+        return name;
+    }
+    public V getAge(){
+        return age;
+    }
+ }
+```   
+   BoxTest2.java
+   
+```java
+   public class BoxTest2 {
+
+    public static void main(String[] args) {
+
+        Box2<String, Integer> box=new Box2<>();
+
+        box.setData("홍길동",35);
+        String name=box.getName();
+        Integer age=box.getAge();
+
+        System.out.println("이름: "+name +", 나이 : "+age);
+    }
+   }
+``` 
+   
+<br>
+<br>
+<br>
+   
+### 제네릭 메소드 
+   
+> 일반 클래스의 메소드에서도 타입 매개 변수를 사용하여 제네릭 메소드를 정의 할 수 있다.
+
+   GeMethod.java
+   
+```java 
+   public class GeMethod {
+
+    public <T> void print(T[] item){
+        for (int i = 0; i <item.length ; i++) {
+            System.out.println(item[i]);
+        }
+     }
+  }
+```
+        
