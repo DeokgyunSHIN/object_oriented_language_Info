@@ -162,6 +162,8 @@ Box 클래스에 <T>의 제네릭이 전부다 Integer로 변경되는것이다.
 ### 제네릭 메소드 
    
 > 일반 클래스의 메소드에서도 타입 매개 변수를 사용하여 제네릭 메소드를 정의 할 수 있다.
+   
+   얘시)
 
    GeMethod.java
    
@@ -176,3 +178,42 @@ Box 클래스에 <T>의 제네릭이 전부다 Integer로 변경되는것이다.
   }
 ```
         
+    GeMethodTest.java
+```java
+    public class GeMethodTest {
+
+    public static void main(String[] args) {
+
+    String names[]={"자바", "파이썬", "씨플플"," 자바스트립트"};
+    Double sores[]={100D,98D,95D,90D,100D};
+
+    GeMethod geMethod=new GeMethod();
+
+    geMethod.print(names);
+    geMethod.print(sores);
+    }
+ }             
+```
+
+ 우리가 기존에 main 메소드를 에러 없이 실행 했어야 했다면 
+                                       
+ ``` 
+    public void print(String[] item){
+        for (int i = 0; i <item.length ; i++) {
+            System.out.println(item[i]);
+        }
+    }
+   
+   public void print(Double[] item){
+        for (int i = 0; i <item.length ; i++) {
+            System.out.println(item[i]);
+        }
+    }
+ ```
+                                      
+                                       
+ 해줘야 한다. 결국 제네릭을 쓰지 않고 사용하게 된다면 
+                                       
+ 각각의 타입에 맞는 메소드를 일일히 생성해줘야 한다는 소리이다.
+                                       
+                                       
