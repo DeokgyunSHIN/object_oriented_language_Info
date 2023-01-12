@@ -13,3 +13,24 @@
 > 기본적으로 프로그램에서 오류가 발생한다면 프로그램은 대부분 비정상적으로 종류가 된다.
 > 
 > 하지만, 이런 오류중에서 프로그램으로 나름 대응할 수 있는 오류가 있는데 이런 대응 가능한 부분을 예외라고 한다.
+
+
+예외처리 클래스 
+
+```mermaid
+graph LR
+A(Object/ java.lang)-->B[Throwable]
+B-->C(Error)
+B-->D(Execption)
+D-->F(RunTimeException)
+D-->G(Other Exceptions)
+```
+
+Other Exceptions 은 보통 일반적인 에러이다.
+
+파일에러, 클래스 에러, 데이터베이스 에러 등등이 있다.
+
+RunTimeException 은 실행시 발생하는 에러이다.
+
+배열의 공간 에러, 계산에러 등등이 있다.
+
