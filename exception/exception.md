@@ -26,11 +26,77 @@ D-->F(RunTimeException)
 D-->G(Other Exceptions)
 ```
 
-Other Exceptions 은 보통 일반적인 에러이다.
+Other Exceptions 은 보통 일반적인 에러이다.( 예외에 대한 부분을 명시적으로 처리해줘야 된다.)
 
 파일에러, 클래스 에러, 데이터베이스 에러 등등이 있다.
 
-RunTimeException 은 실행시 발생하는 에러이다.
+RunTimeException 은 실행시 발생하는 에러이다. 
 
 배열의 공간 에러, 계산에러 등등이 있다.
+
+<br>
+<br>
+<br>
+
+### 예외처리 방법
+
+1. 내가 try catch 한다 
+2. throw 한다. 넘긴다.
+
+
+예시 
+
+``` java 
+  public class ExTest {
+    public static  void method1(int x, int y) {
+
+        System.out.println(x/y);
+    }
+    public static void main(String[] args) {
+
+        method1(1,0);
+    }
+ }
+```
+
+결과
+```
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at ExTest.method1(ExTest.java:5)
+	at ExTest.main(ExTest.java:9)
+```
+
+위의 코드를 실행시키면 에러가 발생한다. 
+
+그 이유는 0으로 나누기 때문이다.
+
+이럴 때 예외처리를 하는데 
+
+
+``` java
+ public class ExTest {
+    public static  void method1(int x, int y) throws Exception {
+          if(x==0 || y==0){
+              throw new Exception("0으로 나눌수 없습니다.");
+          }
+        System.out.println(x/y);
+    }
+    public static void main(String[] args) {
+
+        try {
+            method1(1,0);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+ }
+```
+
+결과
+```
+Exception in thread "main" java.lang.ArithmeticException: 0으로 나눌수 없습니다.
+	at ExTest.method1(ExTest.java:5)
+	at ExTest.main(ExTest.java:9)
+```
 
