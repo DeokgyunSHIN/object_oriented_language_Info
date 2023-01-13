@@ -7,3 +7,89 @@
 > 대부분의 프로그램은 자료를 저장하기 떄문에 필요에 따라서 적절한 자료 구조를 사용할 지를 결정한다.
 > 
 > > 예) 전화번호 저장 , 시간표저장
+<br>
+<br>
+<br>
+
+
+### 컬렉션의 종류 
+
+> 자바는 컬렉션 인터페이스와 컬렉션 클래스로 나누어서 제공한다.
+> 
+> 컬렉션 라이브러리들은 모두 제니릭 기능을 지원한다.
+
+|인터페이스 | 설명 |
+|:---:|:------:|
+|Collection|모든 자료 구조의 부모 인터페이스로 객체의 모임|
+|Set | 집합(중복된 원소를 가지지 않는)을 나태는 자료 구조 |
+|List | 순서가 있는 자료 구조로 중복된 원소를 가질 수 있다.|
+|Map | 키와 값으로 구성 |
+|Queue | 들어오는 순서대로 나가는 자료구조 |
+
+```mermaid
+graph LR
+A(Stack)-->B(Vetor)
+B-->E(List)
+C(LinkedList)-->E
+D(ArrayList)-->E
+F(Queue)
+G(LinkedHashSet)-->H(HashSet)
+I(TreeSet)-->J(SortedSet)
+J-->K(NavigableSet)
+K-->L(Set)
+H-->L
+L-->M(Collection)
+F-->M
+E-->M
+M-->N(Iterable)
+```
+```mermaid
+graph LR
+
+A(TreeMap)-->B(NavigableMap)
+B-->C(SortedMap)
+C-->D(Map)
+E(LinkedHashMap)-->F(HashMap)
+G(HashTable)-->D
+F-->D
+```
+
+### Vector 클래스  
+
+> 백터 클래스는 java에서 가장 오랜된 자료구조 구현 클래스이다.
+> 
+> 배열의 경우, 크기가 고정되어 있기 때문에 사용이 불편하다.
+> 
+>  백터는 가변 크기의 배열을 구현한다.
+>  
+>  요소의 개수가 늘어나면 자동으로 배열의 크기가 늘어난다.
+
+
+VectorTest.java
+
+```java 
+  public class VectorTest {
+
+    public static void main(String[] args) {
+        Vector vector=new Vector();
+
+        vector.add("홍길동");
+        vector.add("남자");
+        vector.add(25);
+        vector.add(80.15);
+        String name=(String)vector.get(0);
+        int age=(int)vector.get(2);
+
+        for (Object x:vector) {
+            System.out.println(x);
+         }
+     }
+ }
+```
+
+벡터의 리턴 값은 Object 이다.
+
+그러기 떄문에 만약에 각각의 변수나 String에 넣고 싶을 떄는 형번환을 해준다음 
+
+변수에 넣어야 한다.
+
