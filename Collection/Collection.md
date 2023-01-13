@@ -28,31 +28,104 @@
 
 ```mermaid
 graph LR
-A(Stack)-->B(Vetor)
-B-->E(List)
-C(LinkedList)-->E
-D(ArrayList)-->E
-F(Queue)
-G(LinkedHashSet)-->H(HashSet)
-I(TreeSet)-->J(SortedSet)
-J-->K(NavigableSet)
-K-->L(Set)
-H-->L
-L-->M(Collection)
-F-->M
-E-->M
-M-->N(Iterable)
+A(Collection)-->B(List)
+B-->C(LinkedList)
+B-->D(Stack)
+B-->E(Vector)
+B-->F(ArrayList)
+
+A-->G(Set)
+G-->H(HashSet)
+G-->I(SortedSet)
+I-->J(TreetSet)
+
 ```
+<br>
+<br>
+
 ```mermaid
 graph LR
+A(Map)-->B(HashTable)
+A-->C(HashMap)
+A-->D(SortedMap)
+D-->E(TreeMap)
 
-A(TreeMap)-->B(NavigableMap)
-B-->C(SortedMap)
-C-->D(Map)
-E(LinkedHashMap)-->F(HashMap)
-G(HashTable)-->D
-F-->D
 ```
+<br>
+<br>
+<br>
+
+### Set
+
+코드 
+
+```java
+  import java.util.*;
+
+public class SetTest {
+
+    public static void main(String[] args) {
+
+        HashSet<String> hashset=new HashSet<>();  // 내가 아무렇게 데이터를 넣었지만 시스템 내부에서 알아서 정렬되서 나온다.
+        LinkedHashSet<String> linkedhashset=new LinkedHashSet<>();  // 내가 넣은 그대로 나온다.
+        TreeSet<String> treeset=new TreeSet<>();
+
+        hashset.add("4");
+        hashset.add("2");
+        hashset.add("3");
+        hashset.add("1");
+        hashset.add("4");
+
+        linkedhashset.add("4");
+        linkedhashset.add("2");
+        linkedhashset.add("3");
+        linkedhashset.add("1");
+        linkedhashset.add("4");
+
+        treeset.add("4");
+        treeset.add("2");
+        treeset.add("4");
+        treeset.add("3");
+        treeset.add("1");
+        treeset.add("4");
+
+
+        Iterator<String> iterator= hashset.iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        System.out.println("====================================");
+        Iterator<String> iterator2= linkedhashset.iterator();
+        while(iterator2.hasNext()){
+            System.out.println(iterator2.next());
+        }
+        System.out.println("====================================");
+        Iterator<String> iterator3= treeset.iterator();
+        while(iterator3.hasNext()){
+            System.out.println(iterator3.next());
+        }
+    } 
+ }
+```
+위에 코드를 보게 되면 일단 HashSet, LinkedHashSet, TreeSet 모두 들어가는 값이 (키값)이 중복되는것을 걸러주고
+
+ HashSet은  자료가 추가된 순서와 상관없이 출력되는것을 알수 있고 
+
+LinkedHashSet은 내가 넣은 값 순서대로 출력되고 
+
+TreeSet은 내가 넣은 값을 정렬해서 나오는것을 알수 있다.
+
+<br>
+<br>
+<br>
+
+
+### Map
+
+코드
+
+
 
 ### Vector 클래스  
 
@@ -86,6 +159,8 @@ VectorTest.java
      }
  }
 ```
+
+
 
 벡터의 리턴 값은 Object 이다.
 
