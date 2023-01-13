@@ -187,6 +187,49 @@ public class MapTest {
 Map은 데이터 집어 넣을때 .put()을 해줘야한다.
 
 
+#List
+
+```java
+ import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class ListTest {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> arrayList=new ArrayList<>();
+        LinkedList<String> linkedList=new LinkedList<>();
+
+        arrayList.add("B");
+        arrayList.add("A");
+        arrayList.add("D");
+        arrayList.add("C");
+        arrayList.add("A");
+
+        linkedList.add("B");
+        linkedList.add("A");
+        linkedList.add("D");
+        linkedList.add("C");
+        linkedList.add("B");
+        for (String s:arrayList) {
+            System.out.println(s);
+        }
+        System.out.println("==========================================================");
+        for (String ss:linkedList) {
+            System.out.println(ss);
+        }
+
+    }
+ }
+```
+
+ArrayList와 LinkedList는 결과값이 똑같다.
+
+하지만 ArrayList는 순차적인 추가 삭제는 빠르지만 중간에 있는 데이터를 추가 또는 삭제 할시 
+
+LinkedList보다 느리다. 그리고 ArrayList에서 추가 삭제를 반복할 경우에는 메모리 사용에 비효율적일 수도 있다.
+
+LinkedList는 데이터를 추가 삭제 할떄는 용이하지만 검색속도가 느리다.
 
 ### Vector 클래스  
 
