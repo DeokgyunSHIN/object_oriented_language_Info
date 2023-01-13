@@ -155,3 +155,96 @@ String name 이 "홍길동"과 같은가?  --------- 1번
 
 컴퓨터 또한 똑같기 때문에 if(name!=null && str.equals("홍길동"))은 좋은 로직은 아니다.
 
+<br>
+<br>
+<br>
+
+### String 클래스 
+
+> 자바에서 문자열을 처리하는 클래스이다.
+
+```java
+ public class StringTest {
+
+     public static void p(Object o){
+         System.out.print(o);
+     }
+     public static void pl(Object o){
+         System.out.println(o);
+     }
+
+    public static void main(String[] args) {
+
+      String s1="https://naver.com";
+
+      final String FS="https://naver.com";
+
+      //length()
+        int length= s1.length();
+        pl(length);
+
+        //charAt()
+        for (int i = 0; i <length; i++) {
+            p(s1.charAt(i));
+        }
+
+        //toCharArray()
+        pl("");
+        for (char c1:s1.toCharArray()) {
+            p(c1);
+        }
+
+        pl("");
+        // contains(), indexOf(), lastIndexOf()
+        pl(s1.contains("naver"));
+        pl(s1.indexOf("naver"));
+        pl(s1.lastIndexOf("naver"));
+
+        //toLowerCase(), toUpperCase(), trim()
+        pl(s1.toLowerCase());
+        pl(s1.toUpperCase());
+        pl(s1.trim());
+
+        pl("");
+        //contains(), indexOf(), lastIndexOf()
+        pl(s1.contains("naver"));
+        pl(s1.indexOf("naver"));
+        pl(s1.lastIndexOf("naver"));
+
+        //toLowerCase(), toUpperCase(), trim()
+        pl(s1.toLowerCase());
+        pl(s1.toUpperCase());
+        pl(s1.trim());
+
+        //equals(), equalsIgnoreCase()
+        pl(s1.equals(FS));
+        pl(s1.equalsIgnoreCase(FS));
+
+        //split()
+        String urls[]=s1.split("://");
+        for (int i = 0; i <urls.length; i++) {
+            System.out.println(urls[i]);
+        }
+
+        //replace(), replaceAll()
+        pl(s1.replaceAll("com","co.kr"));
+        pl(s1.startsWith("https"));
+        pl(s1.endsWith("com"));
+
+        //concat()
+        pl(s1.concat("firstpage.do"));
+
+        //substring()
+        pl(s1.substring(10));
+
+        //valueOf()
+        String s2=String.valueOf("99");
+        pl(s2);
+
+        //comparTo()
+        //같으면 0,
+        pl(s1.compareTo(s2));
+    } 
+ }
+```
+
