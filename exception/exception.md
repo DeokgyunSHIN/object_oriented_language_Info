@@ -86,7 +86,7 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
         try {
             method1(1,0);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
     }
 
@@ -95,8 +95,8 @@ Exception in thread "main" java.lang.ArithmeticException: / by zero
 
 결과
 ```
-Exception in thread "main" java.lang.ArithmeticException: 0으로 나눌수 없습니다.
-	at ExTest.method1(ExTest.java:5)
-	at ExTest.main(ExTest.java:9)
+ 0으로 나눌수 없습니다.
+	
 ```
 
+이렇게 하면 예외는 화면에 나오지 않고 예외 발생한 메세지를 처리할수 있다.
