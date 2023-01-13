@@ -125,6 +125,67 @@ TreeSet은 내가 넣은 값을 정렬해서 나오는것을 알수 있다.
 
 코드
 
+```java 
+  import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
+
+
+public class MapTest {
+    public static void main(String[] args) {
+
+        HashMap<String, Integer> hashMap=new HashMap<>();
+        LinkedHashMap<String,Integer> linkedHashMap=new LinkedHashMap<>();
+        TreeMap<String,Integer> treeMap=new TreeMap<>();
+
+        hashMap.put("B",2);
+        hashMap.put("A",1);
+        hashMap.put("D",4);
+        hashMap.put("C",3);
+        hashMap.put("B",22);
+
+        linkedHashMap.put("B",2);
+        linkedHashMap.put("A",1);
+        linkedHashMap.put("D",4);
+        linkedHashMap.put("C",3);
+        linkedHashMap.put("B",22);
+
+        treeMap.put("B",2);
+        treeMap.put("A",1);
+        treeMap.put("D",4);
+        treeMap.put("C",3);
+        treeMap.put("B",22);
+        for (String key:hashMap.keySet()) {
+            System.out.println(key+"," +hashMap.get(key));
+        }
+        System.out.println("===============================");
+
+        for (String key:linkedHashMap.keySet()) {
+            System.out.println(key+"," +linkedHashMap.get(key));
+        }
+        System.out.println("===============================");
+
+        for (String key:treeMap.keySet()) {
+            System.out.println(key+"," +treeMap.get(key));
+        }
+    }
+ }
+```
+  
+ HashMap은 그냥 키값만 중복 되지 않게 걸러주고 
+ 
+ LinkedHashMap은 넣는 데이터 순서대로 출력이 된다.
+ 
+ 그리고 TreeMap은 넣은 테이터를 정렬해서 출력이 된다.
+
+===================================================================================
+
+결국은 Set과 Map의 차이는 Map은 키값이 존재를하고 Set은 키값이 존재하지 않다는것이다.
+
+그리고 Set은 데이터 집어 넣을떄 .add() 이지만 
+
+Map은 데이터 집어 넣을때 .put()을 해줘야한다.
+
 
 
 ### Vector 클래스  
